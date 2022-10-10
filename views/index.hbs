@@ -1,0 +1,78 @@
+
+<form action="/reg" method="post" enctype="multipart/form-data">
+		
+	<fieldset>
+		{{!-- {{# if locals.message}} --}}
+	{{!-- <h4 align="center" style="color:green;">{{tuser}}</h4> --}}
+		{{!-- {{/if}} --}}
+	{{!-- <h4 align="center" style="color:red;">{{suser}}</h4> --}}
+
+		{{!-- <h4 align="center">{{sucerr}}</h4> --}}
+		<h1 align="center">User Register Here !</h1>
+	<table border="1" align="center">
+		<tr>
+			<td>
+				<label for="name">Name</label>
+			</td>
+			<td>
+				<input type="text" name="name" value="">
+				<br><p style="color: red;">{{ferr}}</p>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="email">Email</label>
+			</td>
+			<td>
+				<input type="text" name="email" value="" id="email">
+				<br><p style="color: red;">{{eerr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="gender">Gender</label>
+			</td>
+			<td>
+				M:<input type="radio" name="gender" value="male">
+				F:<input type="radio" name="gender" value="female">
+				<br><p style="color: red;">{{gerr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">password</label>
+			</td>
+			<td>
+				<input type="password" name="password" value="{{global.password}}">
+				<br><p style="color: red;">{{perr}}</p>
+			</td>
+		</tr>
+
+		<tr>		
+			<td>
+				<label for="password">Profile</label>
+			</td>
+			<td colspan="2">
+				<input type="file" name="imagefile" value="">
+				<br><p style="color: red;">{{ierr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="register" value="REGISTER!"> 
+				<a href="login"> Login </a>
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+</form>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(() => {
+		// console.log("hello");
+		require('http');
+	});
+</script>

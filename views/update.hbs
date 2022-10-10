@@ -1,0 +1,68 @@
+
+<form action="/update" method="post" enctype="multipart/form-data">
+		
+	<fieldset>
+	<table border="1" align="center">
+		<tr>
+			<td>
+				<label for="name">Name</label>
+			</td>
+			<td>
+				<input type="text" name="name" value="{{name}}">
+				<br><p style="color: red;">{{ferr}}</p>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="email">Email</label>
+			</td>
+			<td>
+				<input type="text" name="email" value="{{email}}">
+				<br><p style="color: red;">{{eerr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Gender</label>
+			</td>
+			<td>
+				{{#if gender}}
+				{{#ifEquals gender "male"}}
+					{{assign 'male' 'checked'}}
+				{{/ifEquals}}
+				{{#ifEquals gender "female"}}
+					{{assign 'female' 'checked'}}
+				{{/ifEquals}}
+				M:<input type="radio" name="gender" value="male" {{@root.male}}>
+				F:<input type="radio" name="gender" value="female" {{@root.female}}>
+				{{/if}}
+				{{!-- <br><p style="color: red;">{{gerr}}</p> --}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">password</label>
+			</td>
+			<td>
+				<input type="password" name="password" value="{{password}}">
+				<br><p style="color: red;">{{perr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Profile</label>
+			</td>
+			<td>
+				<input type="file" name="imagefile" value="">
+				{{!-- <br><p style="color: red;">{{perr}}</p> --}}
+			</td>
+		</tr>
+		<tr>
+
+			<td colspan="2" align="center">
+				<input type="submit" name="update" value="UPDATE!"> 
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+</form>

@@ -1,0 +1,51 @@
+
+<table align="center" border="1">
+
+	<tr>
+		<th>NAME</th>
+		{{!-- <th>EMAIL</th> --}}
+		<th>ACTION</th>
+	</tr>
+	<tr>
+		<td>{{name}}</td>
+		{{!-- <td>{{email}}</td> --}}
+		<td><a href="alogout">Logout</a></td>
+	</tr>
+
+</table>
+<br>
+<fieldset>
+	<center><label>USERS LIST</label></center><br>
+	<center><label style="color:red;">{{deleted}}</label></center><br>
+	<table align="center" border="1">
+
+	<tr>
+		<th>NAME</th>
+		<th>EMAIL</th>
+		<th>PASSWORD</th>
+		<th>GENDER</th>
+		<th>PROFILE</th>
+		<th colspan="2">ACTION</th>
+	</tr>
+	{{# if status}}
+	{{#each result}}
+	<tr>
+		<td>{{this.name}}</td>
+		<td>{{this.email}}</td>
+		<td>{{this.password}}</td>
+		<td>{{this.gender}}</td>
+		<td><img src="images/{{this.profile}}" height="100" width="100"></td>
+		<td><a href="delete?id={{this.id}}">delete</a></td>
+		<td><a href="update?id={{this.id}}">update</a></td>
+	</tr>
+	{{/each}}
+	
+	{{else}}
+	<tr>
+		<td colspan="6"><center><b>{{nodata}}</b></center></td>
+	</tr>
+	{{/if}}
+
+
+</table>
+</fieldset>

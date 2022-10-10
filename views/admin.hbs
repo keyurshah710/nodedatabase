@@ -1,0 +1,41 @@
+
+<form action="/admin" method="post">
+		
+	<fieldset>
+		{{# if status}}
+			<h2 style="color:red;" align="center">{{usererr}}</h2>
+		{{/if}}
+	<table border="1" align="center">
+		<tr>
+			<td>
+				<label for="email">Email</label>
+			</td>
+			<td>
+				<input type="text" name="email" value="{{email}}">
+				<br><p style="color: red;">{{eerr}}</p>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">password</label>
+			</td>
+			<td>
+				<input type="password" name="password" value="{{password}}">
+				<br><p style="color: red;">{{perr}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="checkbox" name="rememberme">&nbsp;Remember Me!
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="admin" value="AdMin!">
+				{{!-- <a href="/">register</a> --}}
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+</form>
